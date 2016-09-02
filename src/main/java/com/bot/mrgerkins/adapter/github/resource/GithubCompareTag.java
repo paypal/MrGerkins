@@ -9,7 +9,7 @@ import java.util.List;
 
 
 /**
- * Created by biphilip on 5/17/16.
+ * Created by bijilap on 5/17/16.
  *
  * Resource for response from GET /compare
  */

@@ -27,11 +27,11 @@ import static org.assertj.core.api.Assertions.*;
 
 
 /**
- * Created by biphilip on 7/16/16.
+ * Created by bijilap on 7/16/16.
  */
 public class GithubUtilsTest {
 
-    private static final String REPO_FULL_NAME = "biphilip/mr-gerkins";
+    private static final String REPO_FULL_NAME = "bijilap/mr-gerkins";
     private static final String TAG_BRANCH = "master";
     private static final String LATEST_RELEASE_TAG = "v2.0.6";
 
@@ -124,11 +124,11 @@ public class GithubUtilsTest {
         Mockito.doAnswer(invocationOnMock -> {
             Object args[] = invocationOnMock.getArguments();
             assertThat(args).hasSize(4);
-            String expected = "## biphilip/mr-gerkins &nbsp;&nbsp;&nbsp;&nbsp; vv2.0.6\n"
+            String expected = "## bijilap/mr-gerkins &nbsp;&nbsp;&nbsp;&nbsp; vv2.0.6\n"
                     + "### Changes \n"
                     + "\n"
-                    + "* [#12](github.combiphilip/mr-gerkins/pull/12)&nbsp;&nbsp;&nbsp;&nbsp;This is the title for PR\n"
-                    + "* [#72](github.combiphilip/mr-gerkins/pull/72)&nbsp;&nbsp;&nbsp;&nbsp;Cleaning unused imports";
+                    + "* [#12](github.combijilap/mr-gerkins/pull/12)&nbsp;&nbsp;&nbsp;&nbsp;This is the title for PR\n"
+                    + "* [#72](github.combijilap/mr-gerkins/pull/72)&nbsp;&nbsp;&nbsp;&nbsp;Cleaning unused imports";
             assertThat(args[2]).isEqualTo(expected);
             return invocationOnMock;
         }).when(githubUtils).updateFileInRepo(anyString(), anyString(), anyString(), anyString());

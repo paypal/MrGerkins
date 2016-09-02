@@ -1,7 +1,7 @@
 package com.bot.mrgerkins.adapter.jenkins;
 
 /**
- * Created by biphilip on 5/17/16.
+ * Created by bijilap on 5/17/16.
  */
 public class LastBuild {
 

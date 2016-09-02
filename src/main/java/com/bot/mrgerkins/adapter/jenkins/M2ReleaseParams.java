@@ -4,7 +4,7 @@ import lombok.Getter;
 
 
 /**
- * Created by biphilip on 6/18/16.
+ * Created by bijilap on 6/18/16.
  */
 @Getter
 public enum M2ReleaseParams {

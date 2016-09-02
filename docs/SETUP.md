@@ -27,3 +27,9 @@ sudo cp mr-gerkins.jar  /var/mr-gerkins/
 sudo ln -s /var/mr-gerkins/mr-gerkins.jar  /etc/init.d/mr-gerkins
 sudo /etc/init.d/mr-gerkins start
 ```
+
+## External Dependencies
+
+1. Lombok
+Include the plugin for Lombok in the IDE
+For Intellij: https://github.com/mplushnikov/lombok-intellij-plugin

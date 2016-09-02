@@ -27,7 +27,7 @@ where,
 `$MVN_RELEASE_VERSION`: Release version of the component
 `$REPONAME`: full name of the repository. Ex: Payments-R/paymentapiplatformserv
 `$HOST_DETAILS`: IP/Host/URL where the bot is hosted
-![image](https://github.paypal.com/github-enterprise-assets/0000/7505/0001/9226/a9e65356-3ba2-11e6-94b0-63abb2aabe74.png)
+
 ##### B. Fusion
 Fusion does not support addition of plugins out of the box. Therefore we need to create another job that executes the generation and commiting of release notes. This commit has to happen before SCM clone is done. The bot will take care of calling the fusion job to perform the maven release.
 * In `application.properties` add `owner-or-org/owner-or-org:fusion_job` kvp to `fusion.repositories` paramter. `fusion_job` is your compoent's release job.
@@ -37,7 +37,6 @@ Fusion does not support addition of plugins out of the box. Therefore we need to
 curl -d "{ \"branch\": \"$BRANCH\", \"release_version\": \"$RELEASE_VERSION\", \"repository_full_name\": \"$REPOSITORY\", \"development_version\": \"$DEVELOP_VERSION\", \"is_dry_run\": $IS_DRY_RUN, \"scm_tag\": \"$SCM_TAG\", \"parameter\": \"[{\\\"name\\\": \\\"BRANCH\\\", \\\"value\\\": \\\"$BRANCH\\\"}, {\\\"name\\\": \\\"SKIP_TESTS\\\", \\\"value\\\": $SKIP_TESTS}]\" }" -H "Content-Type: application/json" -X POST "$HOST_DETAILS/api/v1/tag/create"
 exit 0
 ```
-![image](https://github.paypal.com/github-enterprise-assets/0000/7505/0001/9227/1c0f7c32-3ba3-11e6-8f3b-acd645bda90f.png)
 
 #### 2. Notify tag PR owners
 Mr. Gerkins  can notify all contributors, whose pull requests were included in the tag. The integration is same for both Jenkins and fusion
@@ -64,7 +63,7 @@ Mr. Gerkins can identify and label pull requests raised by contributors outside 
 ```
 dl-manager.token={dl manager access token}
 dl-manager.executor={Authorized DL manager api caller user id}
-dl-manager.service-url=https://dlmanager.paypalcorp.com
+dl-manager.service-url=https://dlmanager.mycompany.com
 dl-manager.target-dl={your teams dl}
 dl-manager.enabled=true
 ```
@@ -77,11 +76,6 @@ Now subscribe to the PR webhooks notification.
 http://{$HOST-DETAILS}/webhook/pull-request
 ```
 
-### External Dependencies
-
-1. Lombok
-Include the plugin for Lombok in the IDE
-For Intellij: https://github.com/mplushnikov/lombok-intellij-plugin
 
 ## License
 Mr. Gerkins is licensed under MIT license. The license can be found [here](LICENSE.md).

@@ -1,7 +1,7 @@
 package com.bot.mrgerkins.adapter.github.resource;
 
 /**
- * Created by biphilip on 6/2/16.
+ * Created by bijilap on 6/2/16.
  */
 public enum Action {
     OPENED("opened"),

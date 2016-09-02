@@ -29,7 +29,7 @@ import java.util.Map;
 
 
 /**
- * Created by biphilip on 5/14/16.
+ * Created by bijilap on 5/14/16.
  */
 @Component
 public class JenkinsClientWrapperImpl implements JenkinsClientWrapper {

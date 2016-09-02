@@ -6,7 +6,7 @@ import lombok.Setter;
 
 
 /**
- * Created by biphilip on 5/24/16.
+ * Created by bijilap on 5/24/16.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Getter

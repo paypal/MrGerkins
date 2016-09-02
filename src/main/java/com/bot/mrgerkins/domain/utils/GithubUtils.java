@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
 
 
 /**
- * Created by biphilip on 5/18/16.
+ * Created by bijilap on 5/18/16.
  */
 @Component
 public class GithubUtils {

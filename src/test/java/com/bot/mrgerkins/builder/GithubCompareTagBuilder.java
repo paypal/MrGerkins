@@ -8,7 +8,7 @@ import java.util.List;
 
 
 /**
- * Created by biphilip on 7/17/16.
+ * Created by bijilap on 7/17/16.
  */
 public class GithubCompareTagBuilder {
 

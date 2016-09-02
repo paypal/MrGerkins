@@ -1,7 +1,7 @@
 package com.bot.mrgerkins.domain.constants;
 
 /**
- * Created by biphilip on 8/3/16.
+ * Created by bijilap on 8/3/16.
  */
 public enum ErrorMessage {
     HTTP_EXCEPTION("An http exception occurred while connecting to the server."),

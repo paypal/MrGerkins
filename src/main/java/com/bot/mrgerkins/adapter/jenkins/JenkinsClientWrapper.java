@@ -5,7 +5,7 @@ import org.apache.http.HttpException;
 
 
 /**
- * Created by biphilip on 5/14/16.
+ * Created by bijilap on 5/14/16.
  */
 public interface JenkinsClientWrapper {
 

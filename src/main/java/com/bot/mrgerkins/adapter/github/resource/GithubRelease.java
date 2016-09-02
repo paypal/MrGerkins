@@ -8,7 +8,7 @@ import lombok.Setter;
 
 
 /**
- * Created by biphilip on 5/17/16.
+ * Created by bijilap on 5/17/16.
  *
  * Resource returned by GET /repos/:owner/:repo/releases/latest
  *

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 
 /**
- * Created by biphilip on 5/24/16.
+ * Created by bijilap on 5/24/16.
  */
 
 public interface EmailClientWrapper {
