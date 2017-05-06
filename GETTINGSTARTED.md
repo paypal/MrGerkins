@@ -1,13 +1,13 @@
 ## Setting up Environment for Development
-*Install JDK 1.8
+* Install JDK 1.8
 
-*Install your favorite IDE for java
+* Install your favorite IDE for java
 
-*Install maven
+* Install maven
 
-*Clone the forked repository
+* Clone the forked repository
 
-*Import the project into the IDE
+* Import the project into the IDE
 
 ## Generating executable jar
 ```
