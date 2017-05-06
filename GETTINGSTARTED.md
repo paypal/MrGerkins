@@ -1,16 +1,16 @@
-##Setting up Environment for Development
+## Setting up Environment for Development
 *Install JDK 1.8
 *Install your favorite IDE for java
 *Install maven
 *Clone the forked repository
 *Import the project into the IDE
 
-##Generating executable jar
+## Generating executable jar
 ```
 mvn clean package
 ```
 
-##Deloying Mr. Gerkins
+## Deloying Mr. Gerkins
 Here are the steps to install Mr. Gerkins on an Ubuntu instance:
 * Install JDK 1.8 on the instance
 ```
