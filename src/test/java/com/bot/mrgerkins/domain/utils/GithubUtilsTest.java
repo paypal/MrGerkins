@@ -31,12 +31,13 @@ import static org.assertj.core.api.Assertions.*;
  */
 public class GithubUtilsTest {
 
-    private static final String REPO_FULL_NAME = "bijilap/mr-gerkins";
+    private static final String BIJILAP_REPO_FULL_NAME = "bijilap/mr-gerkins";
     private static final String TAG_BRANCH = "master";
     private static final String LATEST_RELEASE_TAG = "v2.0.6";
 
     private static final String RELEASEEVENT_WH_FILE = "src/test/resources/github/ReleaseEventWebhook.json";
     private static final String GITHUB_URL = "github.com";
+    private static final String BAXTERTHEHACKER_REPO_FULL_NAME = "baxterthehacker/public-repo";
 
     @Mock
     private GithubClientWrapper githubClientWrapper;
@@ -75,7 +76,7 @@ public class GithubUtilsTest {
 
         //service calls
         //result: (PR#, Author, Title)
-        List<Triple<String, String, String>> result =  githubUtils.getListOfMergedPRs(REPO_FULL_NAME, TAG_BRANCH);
+        List<Triple<String, String, String>> result =  githubUtils.getListOfMergedPRs(BIJILAP_REPO_FULL_NAME, TAG_BRANCH);
 
         //assertions
         assertThat(result).hasSize(2);
@@ -97,12 +98,12 @@ public class GithubUtilsTest {
         Mockito.doAnswer(invocationOnMock -> {
             Object args[] = invocationOnMock.getArguments();
             assertThat(args).hasSize(4);
-            assertThat(args).contains(senderEmail,notifyDlEmail, "Symphony Release Update");
+            assertThat(args).contains(senderEmail,notifyDlEmail, BAXTERTHEHACKER_REPO_FULL_NAME + " Release Update");
             return invocationOnMock;
         }).when(emailClientWrapper).sendMail(anyString(), anyString(), anyString(), anyString());
 
         when(emailConfig.getSender()).thenReturn(senderEmail);
-        when(emailConfig.getReleaseNotifyDlForRepo("baxterthehacker/public-repo")).thenReturn(notifyDlEmail);
+        when(emailConfig.getReleaseNotifyDlForRepo(BAXTERTHEHACKER_REPO_FULL_NAME)).thenReturn(notifyDlEmail);
 
         githubUtils.notifyRelease(releasePayload);
     }
@@ -134,7 +135,7 @@ public class GithubUtilsTest {
         }).when(githubUtils).updateFileInRepo(anyString(), anyString(), anyString(), anyString());
 
 
-        githubUtils.generateReleaseNotes(REPO_FULL_NAME, TAG_BRANCH, LATEST_RELEASE_TAG);
+        githubUtils.generateReleaseNotes(BIJILAP_REPO_FULL_NAME, TAG_BRANCH, LATEST_RELEASE_TAG);
     }
 
     private void mockGithubCompareTagResponse() throws IOException, HttpException {
@@ -152,9 +153,9 @@ public class GithubUtilsTest {
                 .addCommit(githubCommitRecord2).addCommit(githubCommitRecord3).build();
 
         //define mocks and stubs
-        when(githubClientWrapper.getLatestRelease(REPO_FULL_NAME))
+        when(githubClientWrapper.getLatestRelease(BIJILAP_REPO_FULL_NAME))
                 .thenReturn(new GithubReleaseBuilder().tagName(LATEST_RELEASE_TAG).build());
-        when(githubClientWrapper.compareCommitTags(REPO_FULL_NAME, LATEST_RELEASE_TAG, TAG_BRANCH))
+        when(githubClientWrapper.compareCommitTags(BIJILAP_REPO_FULL_NAME, LATEST_RELEASE_TAG, TAG_BRANCH))
                 .thenReturn(githubCompareTag);
     }
 }
