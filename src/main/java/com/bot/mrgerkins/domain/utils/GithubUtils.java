@@ -180,7 +180,7 @@ public class GithubUtils {
                 emailClientWrapper
                         .sendMail(emailConfig.getSender(),
                                 new StringBuilder(author).append("@").append(emailConfig.getDomain()).toString(),
-                                "Symphony Pull Request Update",
+                                repoFullName + " Pull Request Update",
                                 templateUtils.materializeTemplateFile(emailTemplate, context));
             }
             catch (EmailException e) {
@@ -224,17 +224,18 @@ public class GithubUtils {
 
     public void notifyRelease(ReleasePayload request) throws EmailException {
 
+        final String repoFullName = request.getRepository().getFullName();
+        final String tagName = request.getRelease().getTagName();
+
         HashMap<String, String> context = new HashMap<>();
-        context.put("repository", request.getRepository().getFullName());
+        context.put("repository", repoFullName);
         context.put("releaseInfo", request.getRelease().getHtmlUrl());
-        context.put("tag", request.getRelease().getTagName());
-        context.put("releaseUrl",
-                new StringBuilder(request.getRepository().getHtmlUrl()).append("/blob/").append(request.getRelease()
-                        .getTagName()).append("/").append(RELEASE_NOTES_FILE_PATH).toString());
+        context.put("tag", tagName);
+        context.put("releaseUrl", new StringBuilder(request.getRepository().getHtmlUrl()).append("/blob/").append(tagName).append("/").append(RELEASE_NOTES_FILE_PATH).toString());
         emailClientWrapper
                 .sendMail(emailConfig.getSender(),
-                        emailConfig.getReleaseNotifyDlForRepo(request.getRepository().getFullName()),
-                        "Symphony Release Update",
+                        emailConfig.getReleaseNotifyDlForRepo(repoFullName),
+                        repoFullName + " Release Update",
                         templateUtils
                                 .materializeTemplateFile(templateUtils.readTemplateFile(NOTIFY_RELEASE_TEMPLATE_PATH),
                                         context));
