@@ -37,7 +37,7 @@ You can follow a full tutorial for [init.d](http://www.jcgonzalez.com/linux-java
 
 If the server shuts down, even after using init.d or systemd, you can use nohup command.
 ```
-nohup java -jar /var/mrgerkinsserv/mrgerkinsserv.jar &
+nohup java -jar /var/mr-gerkins/mr-gerkins.jar &
 ```
 
 ## External Dependencies
