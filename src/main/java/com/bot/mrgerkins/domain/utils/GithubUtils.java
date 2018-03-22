@@ -203,7 +203,7 @@ public class GithubUtils {
             tagDetailsMessage = String.format("<p>A new tag %s has been created for %s.</p>", releaseVersion, repoFullName);
         } else {
             // Handling notifications gracefully when unable to fetch tag from Jenkins
-            tagDetailsMessage = String.format("<p>A new tag has been created for %s.</p>", releaseVersion, repoFullName);
+            tagDetailsMessage = String.format("<p>A new tag has been created for %s.</p>", repoFullName);
         }
         if(StringUtils.isNotEmpty(buildId)){
             buildDetailsMessage = String.format("<p>A new build: %s has been created for %s.</p>", buildId, repoFullName);
