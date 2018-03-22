@@ -29,7 +29,7 @@ sudo /etc/init.d/mr-gerkins start
 
 Some Linux systems don't have init.d, you can use systemd instead
 ```
-sudo ln -s /var/mrgerkinsserv/mr-gerkins.jar /etc/systemd/mr-gerkins
+sudo ln -s /var/mr-gerkins/mr-gerkins.jar /etc/systemd/mr-gerkins
 sudo /etc/systemd/mr-gerkins start
 ```
 
